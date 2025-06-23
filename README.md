@@ -67,7 +67,7 @@ WikiBot es un bot de Discord educativo y totalmente gratuito diseñado para estu
 
 ## 🧠 Autor y créditos
 
-Desarrollado con pasión por [Norvyz](https://github.com/tu-usuario) y la ayuda de APIs públicas como:
+Desarrollado con pasión por [Norvyz](https://github.com/Norvyz) y la ayuda de APIs públicas como:
 
 * [Newton API](https://newton.now.sh/)
 * [MetaDelta](https://github.com/metadelta/solver)
