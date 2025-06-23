@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+
+# Entornos
+.env
+
+# Archivos de logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Sistemas operativos
+.DS_Store
+Thumbs.db
+
+# Editor de código (VS Code)
+.vscode/
+
+# Archivos de producción de Render o builds (si los usas)
+dist/
+build/
