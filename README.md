@@ -1,6 +1,6 @@
 # WikiBot
 
-# 🤖 WikiBot - Tu Asistente de Estudios en Discord 📚
+-Tu Asistente de Estudios en Discord 📚-
 
 WikiBot es un bot de Discord educativo y totalmente gratuito diseñado para estudiantes, profesores y amantes del conocimiento. Resuelve operaciones matemáticas, busca información de Wikipedia, traduce textos y mucho más, todo sin salir de Discord.
 
