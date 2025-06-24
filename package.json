@@ -7,8 +7,11 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "@metadelta/solver": "^2.0.1",
+    "axios": "^1.10.0",
     "discord.js": "^14.0.0",
     "dotenv": "^16.0.0",
+    "express": "^5.1.0",
     "node-fetch": "^2.6.7"
   }
 }
