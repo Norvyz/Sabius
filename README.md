@@ -1,8 +1,8 @@
-# 📚 WikiBot
+# 📚 Sabius
 
 **Tu Asistente de Estudios en Discord**
 
-WikiBot es un bot educativo y completamente gratuito para Discord. Diseñado para estudiantes, profesores y curiosos, permite consultar información, traducir textos, resolver matemáticas y mucho más, sin salir de Discord.
+Sabius  es un bot educativo y completamente gratuito para Discord. Diseñado para estudiantes, profesores y curiosos, permite consultar información, traducir textos, resolver matemáticas y mucho más, sin salir de Discord.
 
 ---
 
