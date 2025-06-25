@@ -1,29 +1,45 @@
-const fs = require('fs');
-const path = require('path');
 const { REST, Routes } = require('discord.js');
+const fs = require('fs');
 require('dotenv').config();
 
-// 📦 Leer todos los comandos desde /commands
+const clientId = process.env.CLIENT_ID;
+const guildId = process.env.GUILD_ID;
+const token = process.env.TOKEN;
+
 const commands = [];
+
+// Cargar todos los comandos desde la carpeta /commands
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) {
   const command = require(`./commands/${file}`);
-  if ('data' in command && 'execute' in command) {
-    commands.push(command.data.toJSON());
-  } else {
-    console.warn(`⚠️ El comando en ${file} está incompleto o malformado.`);
-  }
+  commands.push(command.data.toJSON());
 }
 
-// 🚀 Subir comandos a la API de Discord (GLOBAL o GUILD)
-const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
+// Inicializar REST
+const rest = new REST({ version: '10' }).setToken(token);
 
-// Usa Routes.applicationGuildCommands para pruebas rápidas (solo en 1 servidor)
-rest.put(
-  Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID), // Para un solo servidor
-  // Routes.applicationCommands(process.env.CLIENT_ID), // Para todos los servidores (descomenta si lo quieres global)
-  { body: commands }
-)
-  .then(() => console.log('✅ Comandos registrados correctamente.'))
-  .catch(console.error);
+// Registrar comandos (global o local)
+(async () => {
+  try {
+    console.log('🚀 Actualizando comandos...');
+
+    if (guildId) {
+      // Registro local para desarrollo
+      await rest.put(
+        Routes.applicationGuildCommands(clientId, guildId),
+        { body: commands }
+      );
+      console.log(`✅ Comandos actualizados en el servidor de pruebas (${guildId}).`);
+    } else {
+      // Registro global para todos los servidores
+      await rest.put(
+        Routes.applicationCommands(clientId),
+        { body: commands }
+      );
+      console.log('✅ Comandos globales registrados. (Puede tardar hasta 1 hora en propagarse)');
+    }
+  } catch (error) {
+    console.error('❌ Error al registrar los comandos:', error);
+  }
+})();
