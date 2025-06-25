@@ -1,44 +1,48 @@
-# WikiBot
+# 📚 WikiBot
 
--Tu Asistente de Estudios en Discord 📚-
+**Tu Asistente de Estudios en Discord**
 
-WikiBot es un bot de Discord educativo y totalmente gratuito diseñado para estudiantes, profesores y amantes del conocimiento. Resuelve operaciones matemáticas, busca información de Wikipedia, traduce textos y mucho más, todo sin salir de Discord.
+WikiBot es un bot educativo y completamente gratuito para Discord. Diseñado para estudiantes, profesores y curiosos, permite consultar información, traducir textos, resolver matemáticas y mucho más, sin salir de Discord.
 
 ---
 
 ## ✨ Funciones principales
 
-* 🔍 **/buscar** — Consulta definiciones o temas directamente desde Wikipedia.
-* 🌐 **/traducir** — Traduce texto del español a varios idiomas (inglés, italiano, neerlandés, francés, alemán, portugués).
-* 🧠 **/resolver** — Resuelve expresiones matemáticas con pasos explicados (suma, resta, álgebra, derivadas, integrales, trigonometría, etc.).
-* 📌 **/ayuda** — Muestra los comandos disponibles y cómo usarlos.
+* 🔍 **`/buscar`** — Consulta definiciones o temas desde **Wikipedia**, con opción de traducir al idioma que elijas.
+* 🌐 **`/traducir`** — Traduce texto del español a otros idiomas y viceversa (Inglés, Italiano, Neerlandés, Francés, Alemán, Portugués).
+* 🧐 **`/resolver`** — Resuelve expresiones matemáticas con **pasos explicados** (álgebra, derivadas, integrales, ecuaciones, etc.).
+* 📖 **`/libros`** — Busca información de libros (autor, descripción, año, temas) desde **Open Library**.
+* 📘 **`/diccionario`** — Consulta el significado, fonética y sinónimos de una palabra en inglés.
+* 📜 **`/ayuda`** — Muestra los comandos disponibles y cómo usarlos.
 
 ---
 
-## ⚙️ Tecnologías usadas
+## ⚙️ Tecnologías utilizadas
 
-* `Discord.js v14`
-* API de `Wikipedia`
-* API de `DeepL` para traducción
-* `Newton API` y `MetaDelta` para resolución matemática paso a paso
+* [Discord.js v14](https://discord.js.org/)
+* [Wikipedia API](https://www.mediawiki.org/wiki/API:Main_page)
+* [DeepL API](https://www.deepl.com/docs-api/)
+* [Newton API](https://newton.now.sh/)
+* [MetaDelta Solver API](https://github.com/metadelta/solver)
+* [Open Library API](https://openlibrary.org/developers/api)
 
 ---
 
-## 🚀 Instalación y uso local
+## 🚀 Instalación local
 
-1. Clona este repositorio:
+1. Clona el repositorio:
 
    ```bash
    git clone https://github.com/tu-usuario/WikiBot.git
    cd WikiBot
    ```
 
-2. Crea un archivo `.env` basado en `env.example` con las siguientes variables:
+2. Crea un archivo `.env` basado en `env.example`:
 
-   ```env
+   ```
    TOKEN=tu_token_de_discord
    CLIENT_ID=tu_client_id
-   GUILD_ID=tu_guild_id (opcional para pruebas locales)
+   GUILD_ID=tu_guild_id  # opcional para pruebas locales
    DEEPL_API_KEY=tu_api_key_de_deepl
    ```
 
@@ -58,28 +62,29 @@ WikiBot es un bot de Discord educativo y totalmente gratuito diseñado para estu
 
 ## 📌 Notas importantes
 
-* Este bot fue creado con fines educativos.
-* En algunos comandos, como **/resolver**, se intenta dar prioridad a mostrar los pasos con claridad antes que solo el resultado.
-* El bot no resuelve problemas matemáticos redactados en texto como "Luis compró 3 cuadernos...", pero está en evolución.
-* Si quieres extraer texto desde una imagen, puedes usar extensiones como **CopyFish** para convertir la imagen en texto antes de usar el bot.
+* Este bot fue creado con fines **educativos** y de **autoaprendizaje**.
+* El comando `/resolver` prioriza mostrar **los pasos** en lugar de solo el resultado.
+* No está diseñado para resolver problemas redactados como “Juan tiene 3 manzanas...”.
+* Puedes usar herramientas como **CopyFish** para convertir texto de una imagen y luego usarlo con WikiBot.
 
 ---
 
 ## 🧠 Autor y créditos
 
-Desarrollado con pasión por [Norvyz](https://github.com/Norvyz) y la ayuda de APIs públicas como:
+Desarrollado por **Norvyz** con ayuda de APIs públicas:
 
-* [Newton API](https://newton.now.sh/)
-* [MetaDelta](https://github.com/metadelta/solver)
-* [DeepL Translator](https://www.deepl.com/)
-* [Wikipedia](https://es.wikipedia.org/w/api.php)
+* Newton API
+* MetaDelta
+* DeepL Translator
+* Wikipedia
+* Open Library
 
 ---
 
 ## 🗣 Licencia
 
-Este proyecto es de código abierto bajo la licencia MIT.
+Este proyecto está bajo la licencia **MIT**.
 
 ---
 
-🚀 ¡Espero que WikiBot te ayude a aprender más y mejor!
+## 🚀 ¡Espero que WikiBot te ayude a aprender más y mejor!
