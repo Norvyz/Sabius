@@ -7,9 +7,9 @@ module.exports = {
 
   async execute(interaction) {
     const embed = new EmbedBuilder()
-      .setTitle('📚 WikiBot - Guía de Comandos')
+      .setTitle('📚 Sabius - Guía de Comandos')
       .setColor(0x5865F2)
-      .setDescription('Aquí tienes una lista de comandos útiles que puedes usar con WikiBot:')
+      .setDescription('Aquí tienes una lista de comandos útiles que puedes usar con Sabius:')
       .addFields(
         {
           name: '🔍 /buscar [tema] [idioma]',
