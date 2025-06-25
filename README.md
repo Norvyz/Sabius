@@ -87,4 +87,4 @@ Este proyecto está bajo la licencia **MIT**.
 
 ---
 
-## 🚀 ¡Espero que WikiBot te ayude a aprender más y mejor!
+## 🚀 ¡Espero que Sabius te ayude a aprender más y mejor!
