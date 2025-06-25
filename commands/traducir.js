@@ -3,45 +3,42 @@ const axios = require('axios');
 require('dotenv').config();
 
 const idiomaMap = {
-  'inglés': 'EN',
-  'italiano': 'IT',
-  'neerlandés': 'NL',
-  'francés': 'FR',
-  'alemán': 'DE',
-  'portugués': 'PT'
+  'Español': 'ES',
+  'Inglés': 'EN',
+  'Italiano': 'IT',
+  'Neerlandés': 'NL',
+  'Francés': 'FR',
+  'Alemán': 'DE',
+  'Portugués': 'PT'
 };
 
 module.exports = {
   data: new SlashCommandBuilder()
     .setName('traducir')
-    .setDescription('Traduce texto del español a otro idioma usando DeepL.')
+    .setDescription('Traduce texto a otro idioma usando DeepL.')
     .addStringOption(option =>
       option.setName('texto')
-        .setDescription('Texto en español para traducir')
+        .setDescription('Texto a traducir (se detectará el idioma automáticamente).')
         .setRequired(true)
     )
     .addStringOption(option =>
       option.setName('idioma')
-        .setDescription('Idioma de destino')
+        .setDescription('Idioma al que quieres traducir el texto.')
         .setRequired(true)
         .addChoices(
-          { name: 'Inglés', value: 'inglés' },
-          { name: 'Italiano', value: 'italiano' },
-          { name: 'Neerlandés', value: 'neerlandés' },
-          { name: 'Francés', value: 'francés' },
-          { name: 'Alemán', value: 'alemán' },
-          { name: 'Portugués', value: 'portugués' }
+          { name: 'Español', value: 'ES' },
+          { name: 'Inglés', value: 'EN' },
+          { name: 'Italiano', value: 'IT' },
+          { name: 'Neerlandés', value: 'NL' },
+          { name: 'Francés', value: 'FR' },
+          { name: 'Alemán', value: 'DE' },
+          { name: 'Portugués', value: 'PT' }
         )
     ),
 
   async execute(interaction) {
     const texto = interaction.options.getString('texto');
-    const idiomaElegido = interaction.options.getString('idioma');
-    const codigoIdioma = idiomaMap[idiomaElegido];
-
-    if (!codigoIdioma) {
-      return interaction.reply('❌ Idioma no válido.');
-    }
+    const idiomaDestino = interaction.options.getString('idioma');
 
     await interaction.deferReply();
 
@@ -50,14 +47,17 @@ module.exports = {
         params: {
           auth_key: process.env.DEEPL_API_KEY,
           text: texto,
-          source_lang: 'ES',
-          target_lang: codigoIdioma
+          target_lang: idiomaDestino
         }
       });
 
       const traducido = res.data.translations[0].text;
+      const idiomaFuente = res.data.translations[0].detected_source_language;
 
-      await interaction.editReply(`✅ Traducción al ${idiomaElegido}:\n**${traducido}**`);
+      await interaction.editReply(
+        `📝 Traducción detectada desde **${idiomaFuente}** a **${idiomaDestino}**:\n\n**${traducido}**`
+      );
+
     } catch (error) {
       console.error('❌ Error al traducir con DeepL:', error.response?.data || error.message);
       await interaction.editReply('❌ Ocurrió un error al traducir con DeepL.');
