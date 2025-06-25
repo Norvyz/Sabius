@@ -12,17 +12,25 @@ module.exports = {
       .setDescription('Aquí tienes una lista de comandos útiles que puedes usar con WikiBot:')
       .addFields(
         {
-          name: '🔎 /buscar [tema]',
-          value: 'Busca un resumen desde Wikipedia.\nEjemplo: `/buscar Qué es la programación?`'
+          name: '🔍 /buscar [tema] [idioma]',
+          value: 'Busca un resumen desde Wikipedia y traduce si es necesario.\nEjemplo: `/buscar Qué es la programación? español`'
         },
         {
-          name: '🌍 /traducir [texto] [idioma]',
-          value: 'Traduce un texto del español a otro idioma disponible.\nEjemplo: `/traducir Hola mundo inglés`'
+          name: '🌐 /traducir [texto] [idioma]',
+          value: 'Traduce cualquier texto del español a otros idiomas o viceversa.\nEjemplo: `/traducir Hello world español`'
+        },
+        {
+          name: '📖 /libros [título]',
+          value: 'Busca libros por título, muestra autor, año, temas y descripción.\nEjemplo: `/libros Cien años de soledad`'
+        },
+        {
+          name: '📘 /diccionario [palabra]',
+          value: 'Consulta el significado, fonética, sinónimos y ejemplo de una palabra en inglés.\nEjemplo: `/diccionario love`'
         },
         {
           name: '🧮 /resolver [operación] [expresión]',
           value:
-            'Resuelve problemas matemáticos y muestra pasos si es posible.\nEjemplos:\n' +
+            'Resuelve problemas matemáticos (simplificar, derivar, integrar, ecuaciones, etc).\nEjemplos:\n' +
             '`/resolver Simplificar (2x^2 + 4x)/2`\n' +
             '`/resolver Derivar x^2 + 3x`\n' +
             '`/resolver Integrar x^2`\n' +
@@ -32,8 +40,8 @@ module.exports = {
           name: 'ℹ️ Consejos útiles',
           value:
             '• Usa `^` para potencias (Ej: `x^2`)\n' +
-            '• Evita problemas escritos con texto (Ej: "Luis tenía 8 manzanas...")\n' +
-            '• Usa herramientas como **CopyFish** para extraer texto de imágenes'
+            '• Usa palabras clave simples para obtener mejores resultados\n' +
+            '• Puedes usar idiomas como `es`, `en`, `fr`, `pt`, etc.'
         }
       )
       .setFooter({ text: 'WikiBot • Tu asistente de estudio 📘' });
